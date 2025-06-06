@@ -1,0 +1,17 @@
+# Carpetas de Visual Studio
+.vs/
+*.user
+*.suo
+*.vcxproj.user
+*.db
+*.cache
+*.log
+
+# Archivos temporales y de compilación
+bin/
+obj/
+
+# Otros comunes
+*.swp
+*.DS_Store
+Thumbs.db

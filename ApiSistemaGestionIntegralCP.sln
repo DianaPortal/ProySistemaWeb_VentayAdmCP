@@ -3,7 +3,55 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.API", "SistemaVenta.API\SistemaVenta.API.csproj", "{43F93E00-0079-4694-BBB9-8AA52930C2C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.DAL", "SistemaVenta.DAL\SistemaVenta.DAL.csproj", "{56F85449-639E-4D99-A26B-601642B70A5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.BLL", "SistemaVenta.BLL\SistemaVenta.BLL.csproj", "{E46E4F9E-1BA8-46DF-B961-C145AA6A0538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.Model", "SistemaVenta.Model\SistemaVenta.Model.csproj", "{29855D2A-B96B-488B-8BBC-8296DF3C58B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.IOC", "SistemaVenta.IOC\SistemaVenta.IOC.csproj", "{DBADA20C-23B4-4BE2-92D0-5B14C2831AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.DTO", "SistemaVenta.DTO\SistemaVenta.DTO.csproj", "{DDBEAC03-8447-47D0-A786-716D19735192}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.Utility", "SistemaVenta.Utility\SistemaVenta.Utility.csproj", "{2C9E232F-8440-47C8-A940-66BCF2DCEB17}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43F93E00-0079-4694-BBB9-8AA52930C2C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F93E00-0079-4694-BBB9-8AA52930C2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F93E00-0079-4694-BBB9-8AA52930C2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F93E00-0079-4694-BBB9-8AA52930C2C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F85449-639E-4D99-A26B-601642B70A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F85449-639E-4D99-A26B-601642B70A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F85449-639E-4D99-A26B-601642B70A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F85449-639E-4D99-A26B-601642B70A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E46E4F9E-1BA8-46DF-B961-C145AA6A0538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E46E4F9E-1BA8-46DF-B961-C145AA6A0538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E46E4F9E-1BA8-46DF-B961-C145AA6A0538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E46E4F9E-1BA8-46DF-B961-C145AA6A0538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29855D2A-B96B-488B-8BBC-8296DF3C58B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29855D2A-B96B-488B-8BBC-8296DF3C58B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29855D2A-B96B-488B-8BBC-8296DF3C58B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29855D2A-B96B-488B-8BBC-8296DF3C58B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBADA20C-23B4-4BE2-92D0-5B14C2831AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBADA20C-23B4-4BE2-92D0-5B14C2831AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBADA20C-23B4-4BE2-92D0-5B14C2831AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBADA20C-23B4-4BE2-92D0-5B14C2831AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDBEAC03-8447-47D0-A786-716D19735192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBEAC03-8447-47D0-A786-716D19735192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBEAC03-8447-47D0-A786-716D19735192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBEAC03-8447-47D0-A786-716D19735192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C9E232F-8440-47C8-A940-66BCF2DCEB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C9E232F-8440-47C8-A940-66BCF2DCEB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C9E232F-8440-47C8-A940-66BCF2DCEB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C9E232F-8440-47C8-A940-66BCF2DCEB17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
