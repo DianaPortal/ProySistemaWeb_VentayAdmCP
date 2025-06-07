@@ -1,11 +1,6 @@
 ﻿using SistemaVenta.DAL.DBContext;
 using SistemaVenta.DAL.Repositorios.Contrato;
 using SistemaVenta.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaVenta.DAL.Repositorios
 {
@@ -13,7 +8,7 @@ namespace SistemaVenta.DAL.Repositorios
     {
         private readonly BddermacoreContext _dbcontext;
 
-        public VentaRepository(BddermacoreContext dbcontext):base(dbcontext)
+        public VentaRepository(BddermacoreContext dbcontext) : base(dbcontext)
         {
             _dbcontext = dbcontext;
         }
@@ -27,7 +22,7 @@ namespace SistemaVenta.DAL.Repositorios
             {
                 try
                 {
-                    foreach(DetalleVenta dv in modelo.DetalleVenta)
+                    foreach (DetalleVenta dv in modelo.DetalleVenta)
                     {
                         //Carga de Producto y Control de Stock
                         Producto prod_encotrado = _dbcontext.Productos.Where(p => p.IdProducto == dv.IdProducto).First();
@@ -70,7 +65,7 @@ namespace SistemaVenta.DAL.Repositorios
 
         }
 
-        
+
 
 
     }
