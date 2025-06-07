@@ -1,6 +1,6 @@
 ﻿namespace SistemaVenta.DTO
 {
-    internal class ProductoDTO
+    public class ProductoDTO
     {
         public int IdProducto { get; set; }
         public string? Nombre { get; set; }
