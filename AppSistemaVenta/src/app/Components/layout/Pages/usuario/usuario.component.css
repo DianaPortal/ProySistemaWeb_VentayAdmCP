@@ -1,0 +1,34 @@
+table{
+    width: 100%;
+}
+
+.mat-form-field{
+    width: 100%;
+    font-size: 14px;
+}
+
+/* dash-board.component.css */
+
+button {
+    margin-right: 8px; /* Añade margen derecho entre los botones */
+  }
+  
+  .edit-button {
+    background-color: #007bff; /* Color del botón de editar */
+    color: #fff;
+  }
+  
+  .delete-button {
+    background-color: #dc3545; /* Color rojo para el botón de eliminar */
+    color: #fff;
+  }
+  
+  /* Cambia el color del botón al pasar el ratón */
+  .edit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  

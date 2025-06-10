@@ -1,0 +1,26 @@
+.body{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-color: #CED4DA ;
+}
+
+.loginCard{
+    max-width: 328px !important;
+    margin:  2em auto;
+    text-align: center;
+    max-height: 600px;
+    background-color: #F2F2F2  ;
+
+}
+
+.header{
+    text-align: center;
+
+}
+
+.full-width{
+    width: 90%;
+}
+
