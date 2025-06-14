@@ -10,25 +10,24 @@
 
         <span style="flex: 1 1 auto;"></span>
 
-        <!-- <label style="font-size: 14px;margin-right: 20px;">{{correoUsuario}} | {{rolUsuario}}</label>-->
+        <label style="font-size: 14px;margin-right: 20px;">{{correoUsuario}} | {{rolUsuario}}</label>
 
-       <!--  <button mat-icon-button (click)="cerrarSesion();">
+       <button mat-icon-button (click)="cerrarSesion();">
             <mat-icon>logout</mat-icon>
-        </button>-->
+        </button>
 
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav opened="true" mode="side" style="width: 200px;">
-        <mat-nav-list>           
-            <!--Menu -->
-           <!--  <mat-list-item *ngFor="let menu of listaMenus" [routerLink]="menu.url">
-                <mat-icon mat-list-icon>{{menu.icono}}</mat-icon>
-                <div mat-line>{{menu.nombre}}</div>
-            </mat-list-item>-->
-
+        <mat-nav-list>
+        <a mat-list-item *ngFor="let menu of listaMenus" [routerLink]="[menu.url]">
+            <mat-icon matListIcon>{{ menu.icono }}</mat-icon>
+            <span class="nombre-menu">{{ menu.nombre }}</span>
+        </a>
         </mat-nav-list>
+
     </mat-sidenav>
     <mat-sidenav-content>
         <div style="height:90vh;">

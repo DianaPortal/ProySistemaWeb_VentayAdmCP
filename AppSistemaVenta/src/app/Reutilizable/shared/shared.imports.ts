@@ -1,6 +1,7 @@
 // shared/shared.imports.ts
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 // Angular Material
 import { MatCardModule } from '@angular/material/card';

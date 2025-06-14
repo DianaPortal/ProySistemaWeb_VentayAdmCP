@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { SHARED_IMPORTS } from '../../Reutilizable/shared/shared.imports';
 
 import { MenuService } from '../../Services/menu.service';
@@ -9,7 +9,11 @@ import { Menu } from '../../Interfaces/menu';
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterOutlet, ...SHARED_IMPORTS],
+  imports: [
+    RouterModule, 
+    RouterOutlet,
+    ...SHARED_IMPORTS
+  ],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
@@ -35,6 +39,7 @@ export class LayoutComponent implements OnInit {
       this.menuService.lista(usuario.idUsuario).subscribe({
         next: (data) => {
           if (data.status) this.listaMenus = data.value;
+          console.log('Menús cargados:', this.listaMenus); 
         },
         error: (e) => {
           console.error('Error al obtener menús', e);
