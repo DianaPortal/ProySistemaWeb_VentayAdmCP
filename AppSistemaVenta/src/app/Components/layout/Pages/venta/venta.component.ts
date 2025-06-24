@@ -77,33 +77,43 @@ export class VentaComponent implements OnInit {
     this.productoSeleccionado = event.option.value;
   }
 
+  calcularTotal(): void {
+  this.totalPagar = this.listaProductosParaVenta.reduce((sum, item) => {
+    return sum + parseFloat(item.totalTexto);
+  }, 0);
+}
   agregarProductoParaVenta(): void {
-    const _cantidad: number = this.formularioProductoVenta.value.cantidad;
-    const _precio: number = parseFloat(this.productoSeleccionado.precio);
-    const _total: number = _cantidad * _precio;
-     this.totalPagar=this.totalPagar+_total;
+  const _cantidad: number = this.formularioProductoVenta.value.cantidad;
+  const _precio: number = parseFloat(this.productoSeleccionado.precio);
+  const _total: number = _cantidad * _precio;
 
-    this.listaProductosParaVenta.push({
-      idProducto: this.productoSeleccionado.idProducto,
-      descripcionProducto: this.productoSeleccionado.nombre,
-      cantidad: _cantidad,
-      precioTexto: _precio.toFixed(2),
-      totalTexto: _total.toFixed(2)
-    });
+  this.listaProductosParaVenta.push({
+    idProducto: this.productoSeleccionado.idProducto,
+    descripcionProducto: this.productoSeleccionado.nombre,
+    cantidad: _cantidad,
+    precioTexto: _precio.toFixed(2),
+    totalTexto: _total.toFixed(2)
+  });
 
-    this.datosDetalleVenta=new MatTableDataSource(this.listaProductosParaVenta);
+  this.datosDetalleVenta = new MatTableDataSource(this.listaProductosParaVenta);
+  this.calcularTotal(); 
 
-    this.formularioProductoVenta.patchValue({
-      producto:'',
-      cantidad:''
-    });
-  }
+  this.formularioProductoVenta.patchValue({
+    producto: '',
+    cantidad: ''
+  });
+}
 
-  eliminarProducto(detalle: DetalleVenta){
-    this.totalPagar -= parseFloat(detalle.totalTexto);
-    this.listaProductosParaVenta = this.listaProductosParaVenta.filter(p => p.idProducto !== detalle.idProducto);
+
+  eliminarProducto(detalle: DetalleVenta) {
+  const index = this.listaProductosParaVenta.indexOf(detalle);
+  if (index !== -1) {
+    this.listaProductosParaVenta.splice(index, 1);
     this.datosDetalleVenta.data = this.listaProductosParaVenta;
+    this.calcularTotal(); // ✅ recalcula correctamente
   }
+}
+
 
   registrarVenta(): void {
     if (this.listaProductosParaVenta.length > 0) {

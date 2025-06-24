@@ -1,10 +1,10 @@
 
 
-<h1 style="margin:20px 0px 0px 40px"> Productos</h1>
+<h1>Productos</h1>
 
 <mat-card style="margin: 20px 40px 40px 40px;">
-    <mat-card-title>
-        <button mat-raised-button color="primary" (click)="nuevoProducto()">
+    <mat-card-title style="height: 60px;">
+        <button mat-raised-button style="margin:10px; background-color:#328E6E; color: #fff;" (click)="nuevoProducto()">
             <mat-icon mat-list-icon>add</mat-icon>Nuevo Producto
         </button>
     </mat-card-title>
@@ -12,7 +12,7 @@
     <mat-divider></mat-divider>
 
     <mat-card-content class="dashboard-card-content">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" style="margin-top: 10px; width: 20%;">
             <mat-label>Buscar</mat-label>
             <input matInput (keyup)="aplicarFiltroTabla($event)" #input>
         </mat-form-field>
