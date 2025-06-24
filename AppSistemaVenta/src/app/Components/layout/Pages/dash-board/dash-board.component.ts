@@ -51,26 +51,73 @@ export class DashBoardComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {}
 
-  mostrarGrafico(labelGrafico: string[], dataGrafico: number[]) {
-    new Chart('chartBarras', {
-      type: 'bar',
-      data: {
-        labels: labelGrafico,
-        datasets: [{
-          label: '# de Ventas',
-          data: dataGrafico,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
-        }]
+ mostrarGrafico(labelGrafico: string[], dataGrafico: number[]) {
+  const canvas = document.getElementById('chartBarras') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d');
+
+  if (!ctx) return;
+
+  // Crear un degradado de color
+  const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+  gradient.addColorStop(0, 'rgba(66, 165, 245, 0.8)');
+  gradient.addColorStop(1, 'rgba(33, 150, 243, 0.4)');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labelGrafico,
+      datasets: [{
+        label: 'Ventas semanales',
+        data: dataGrafico,
+        backgroundColor: gradient,
+        borderRadius: 10,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      responsive: true,
+      animation: {
+        duration: 1500,
+        easing: 'easeOutBounce'
       },
-      options: {
-        maintainAspectRatio: false,
-        responsive: true,
-        scales: {
-          y: { beginAtZero: true }
+      plugins: {
+        tooltip: {
+          backgroundColor: '#333',
+          titleColor: '#fff',
+          bodyColor: '#ddd',
+          padding: 10,
+          cornerRadius: 8
+        },
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: {
+            color: '#444',
+            font: {
+              size: 13,
+              weight: 'bold'
+            }
+          }
+        },
+        y: {
+          beginAtZero: true,
+          grid: {
+            color: '#e0e0e0'
+          },
+          ticks: {
+            color: '#444',
+            font: {
+              size: 13
+            }
+          }
         }
       }
-    });
-  }
+    }
+  });
+}
 }

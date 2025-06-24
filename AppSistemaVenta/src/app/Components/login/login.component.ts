@@ -7,6 +7,7 @@ import { SHARED_IMPORTS } from '../../Reutilizable/shared/shared.imports';
 import { UsuarioService } from '../../Services/usuario.service';
 import { UtlidadService } from '../../Reutilizable/utlidad.service';
 import { Login } from '../../Interfaces/login';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -44,21 +45,43 @@ export class LoginComponent implements OnInit {
       clave: this.formularioLogin.value.password
     };
 
-    this._usuarioServicio.IniciarSesion(request).subscribe({
-      next: (data) => {
-        if (data.status) {
-          this._utilidadServicio.guardarSesionUsuario(data.value);
-          this.router.navigate(['pages']);
-        } else {
-          this._utilidadServicio.mostrarAlerta("El usuario y/o contraseña son incorrectos", "¡Ups!");
-        }
-      },
-      error: () => {
-        this._utilidadServicio.mostrarAlerta("Hubo un error al iniciar sesión", "¡Ups!");
-      },
-      complete: () => {
-        this.mostrarLoading = false;
-      }
-    });
+  this._usuarioServicio.IniciarSesion(request).subscribe({
+  next: (data) => {
+    if (data.status) {
+      
+      this._utilidadServicio.guardarSesionUsuario(data.value);
+
+      
+      Swal.fire({
+    icon: 'success',
+    title: 'Bienvenido',
+    text: `${data.value.nombreCompleto} 👋`,
+    confirmButtonText: 'Continuar',
+    allowOutsideClick: false,  
+    allowEscapeKey: false,      
+    backdrop: false,           
+    didOpen: () => {
+      // Opcionalmente puedes enfocar el botón
+    const btn = Swal.getConfirmButton();
+    if (btn) btn.focus();
+  }
+}).then(() => {
+  // ✅ Solo navegamos cuando el usuario da "Continuar"
+  this.router.navigate(['pages']);
+});
+    } else {
+      
+      this._utilidadServicio.mostrarAlerta("El usuario y/o contraseña son incorrectos", "¡Ups!");
+    }
+  },
+  error: () => {
+    
+    this._utilidadServicio.mostrarAlerta("Hubo un error al iniciar sesión", "¡Ups!");
+  },
+  complete: () => {
+    this.mostrarLoading = false;
+  }
+});
+
   }
 }

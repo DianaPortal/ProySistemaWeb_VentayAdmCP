@@ -1,4 +1,4 @@
-<h1 style="margin:20px 0px 0px 40px"> Nueva Venta</h1>
+<h1>Nueva Venta</h1>
 
 <mat-card style="margin: 20px 40px 40px 40px;">
     <mat-card-content>
@@ -48,7 +48,7 @@
                 </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
-                <button mat-raised-button color="accent" style="width: 80%;">
+                <button mat-raised-button  style="width: 80%; background-color: #332D56; color: #ffffff;">
                     Total: S/. {{totalPagar.toFixed(2)}}
                 </button>
             </mat-grid-tile>
@@ -92,7 +92,7 @@
                 <button mat-raised-button color="primary" style="width: 80%;"
                 [disabled]="listaProductosParaVenta.length<1 || bloquearBotonRegistrar"
                 (click)="registrarVenta()">
-                    <mat-icon>new_label</mat-icon>Registrar
+                    <mat-icon>new_label</mat-icon>Pagar
                 </button>
             </mat-grid-tile>
         </mat-grid-list>
