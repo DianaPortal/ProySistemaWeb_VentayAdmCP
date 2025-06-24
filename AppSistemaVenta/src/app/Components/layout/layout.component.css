@@ -1,0 +1,25 @@
+
+.colorSistema{
+    background-color: #819A91;
+    color: #ffffff;
+} 
+
+h1{
+    padding-right: 50px;
+}
+
+mat-sidenav{
+    background-color: #FFFDF6;
+}
+div{
+    padding-top: 15px;
+}
+mat-card-content {    
+    background-color: #eeefe054;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+img{
+    margin-top: 20px;
+    max-width: 100%;
+}

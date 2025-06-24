@@ -1,0 +1,43 @@
+<mat-toolbar class="colorSistema">
+    <mat-toolbar-row>
+        <h1>
+            DERMACORE
+        </h1>
+
+        <button mat-icon-button (click)="sidenav.toggle();">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span style="flex: 1 1 auto;"></span>
+
+        <label style="font-size: 14px;margin-right: 20px;">{{correoUsuario}} | {{rolUsuario}}</label>
+
+       <button mat-icon-button (click)="cerrarSesion();">
+            <mat-icon>logout</mat-icon>
+        </button>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container> 
+    <mat-sidenav #sidenav opened="true" mode="side" style="width: 250px; padding: 10px;">
+    <div *ngFor="let menu of listaMenus" style="margin-bottom: 1px;">
+        <mat-card class="menu-card" style="cursor: pointer;" [routerLink]="[menu.url]" role="button">
+        <mat-card-content style="display: flex; align-items: center;">
+            <mat-icon>{{ menu.icono }}</mat-icon>
+            <span class="nombre-menu" style="margin-left: 10px;">{{ menu.nombre }}</span>
+        </mat-card-content>
+         
+        </mat-card>       
+    </div>
+    <img src="/img/listdash.jpg" alt="hola">
+</mat-sidenav>
+
+    <mat-sidenav-content>
+        <div style="height:90vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
